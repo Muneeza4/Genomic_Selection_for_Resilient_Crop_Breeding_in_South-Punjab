@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Genomic Research Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f9ff;
+      color: #333;
+    }
+
+    header {
+      background-color: #e0f0ff;
+      padding: 20px 40px;
+      text-align: center;
+      border-bottom: 2px solid #bcdfff;
+    }
+
+    h1 {
+      color: #003f66;
+      margin-bottom: 10px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .nav-button {
+      background-color: #bde4ff;
+      color: #003f66;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .nav-button:hover {
+      background-color: #a3d8ff;
+    }
+
+    .section {
+      background-color: #ffffff;
+      margin: 30px auto;
+      max-width: 1000px;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    h2 {
+      color: #003f66;
+      border-bottom: 2px solid #cde6ff;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid #bde4ff;
+    }
+
+    th,
+    td {
+      padding: 15px;
+      text-align: left;
+      background-color: #f9fcff;
+    }
+
+    th {
+      background-color: #d8efff;
+    }
+
+    img {
+      display: block;
+      width: 90%;
+      max-height: 500px;
+      object-fit: contain;
+      border-radius: 10px;
+      margin: 30px 30px 10px;
+      padding: 10px;
+      background-color: #f0faff;
+      border: 1px solid #d0ebff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Genomic Selection for Resilient Crop Breeding in South Punjab</h1>
+    <nav>
+      <button class="nav-button" onclick="location.href='index.html'">Home</button>
+      <button class="nav-button" onclick="location.href='methodology.html'">Methodology</button>
+      <button class="nav-button" onclick="location.href='beagle.html'">Beagle</button>
+      <button class="nav-button" onclick="location.href='gwas.html'">GWAS Results</button>
+      <button class="nav-button" onclick="location.href='xgboost.html'">XGBoost Results</button>
+      <button class="nav-button" onclick="location.href='rf.html'">Random Forest Results</button>
+      <button class="nav-button" onclick="location.href='evaluation.html'">Evaluation Results</button>
+    </nav>
+  </header>
+
+  <div class="section">
+    <h2>Dataset Description</h2>
+    <p>
+      For this project, entitled <strong>"Genomic Research for Wheat Genes Prediction in South Punjab"</strong>, data was
+      supplied by the Supervisor and is comprised of two main aspects: genotypic data (SNPs) and phenotypic data (agronomic
+      traits). Such datasets serve as the foundation on which to search for the genetic relationships with important wheat
+      traits across the South Punjab area.
+    </p>
+    <p><strong>Data Sources:</strong> Two datasets were used in this research:</p>
+    <ul>
+      <li><strong>Genotypic Data:</strong> The genotypic dataset has 37,373 SNP (Single Nucleotide Polymorphism) marker data for
+        the same 196 genotypes. Each SNP represents a genetic variation point.</li>
+      <li><strong>Phenotypic Data:</strong> Agronomic traits collected from wheat genotypes.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Genotypic Dataset Column Description</h2>
+    <table>
+      <tr>
+        <th>Column Name</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>rs</td>
+        <td>SNP identifier (e.g., 1A_1208114)</td>
+      </tr>
+      <tr>
+        <td>alleles</td>
+        <td>Possible allelic variation at the SNP site (e.g., A/G)</td>
+      </tr>
+      <tr>
+        <td>chrom</td>
+        <td>Chromosome location (e.g., 1A, 3B)</td>
+      </tr>
+      <tr>
+        <td>pos</td>
+        <td>Physical position on the chromosome</td>
+      </tr>
+      <tr>
+        <td>strand</td>
+        <td>DNA strand direction (+ or -)</td>
+      </tr>
+      <tr>
+        <td>assembly</td>
+        <td>Reference genome assembly version</td>
+      </tr>
+      <tr>
+        <td>center</td>
+        <td>Data generating center</td>
+      </tr>
+      <tr>
+        <td>protLSID</td>
+        <td>Protocol identifier (usually NA)</td>
+      </tr>
+      <tr>
+        <td>assayLSID</td>
+        <td>Assay identifier (technical ID)</td>
+      </tr>
+      <tr>
+        <td>panelLSID</td>
+        <td>Panel ID used in SNP genotyping</td>
+      </tr>
+      <tr>
+        <td>QCcode</td>
+        <td>Quality control code (optional)</td>
+      </tr>
+    </table>
+    <img src="images/snp_count.png" alt="Genotype Graph" />
+  </div>
+
+  <div class="section">
+    <h2>Phenotypic Dataset Column Description</h2>
+    <table>
+      <tr>
+        <th>Column Name</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>Genotypes</td>
+        <td>Wheat variety/cultivar name</td>
+      </tr>
+      <tr>
+        <td>DTH_2022-23</td>
+        <td>Days to heading in 2022-23</td>
+      </tr>
+      <tr>
+        <td>SL_2022-23</td>
+        <td>Spike length (cm)</td>
+      </tr>
+      <tr>
+        <td>PH_2022-23</td>
+        <td>Plant height (cm)</td>
+      </tr>
+      <tr>
+        <td>NDVI_2022-23</td>
+        <td>Normalized Difference Vegetation Index</td>
+      </tr>
+      <tr>
+        <td>GPS_2022-23</td>
+        <td>Grains per spike</td>
+      </tr>
+      <tr>
+        <td>TGW_2022-23</td>
+        <td>Thousand grain weight</td>
+      </tr>
+      <tr>
+        <td>Plant height</td>
+        <td>General plant height</td>
+      </tr>
+      <tr>
+        <td>Spikes per meter square</td>
+        <td>Number of spikes/m²</td>
+      </tr>
+      <tr>
+        <td>FLA Average</td>
+        <td>Flag leaf area</td>
+      </tr>
+      <tr>
+        <td>NDVI</td>
+        <td>General NDVI value</td>
+      </tr>
+      <tr>
+        <td>Spike length</td>
+        <td>Spike length (cm)</td>
+      </tr>
+      <tr>
+        <td>Grain per spike</td>
+        <td>Avg. grains per spike</td>
+      </tr>
+      <tr>
+        <td>Spikes Length</td>
+        <td>Spikes/m² (repeat)</td>
+      </tr>
+      <tr>
+        <td>TGW</td>
+        <td>Thousand grain weight (repeat)</td>
+      </tr>
+      <tr>
+        <td>Yield per meter square</td>
+        <td>Grain yield per m²</td>
+      </tr>
+      <tr>
+        <td>Days to heading</td>
+        <td>Sowing to heading duration</td>
+      </tr>
+    </table>
+    <img src="images/Phenotype_heatmap.png" alt="Phenotype Graph" />
+  </div>
+</body>
+</html>

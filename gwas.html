@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Genomic Research Dashboard - GWAS Results</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f9ff;
+      color: #333;
+    }
+    header {
+      background-color: #e0f0ff;
+      padding: 20px 40px;
+      text-align: center;
+      border-bottom: 2px solid #bcdfff;
+    }
+    h1 {
+      color: #003f66;
+      margin-bottom: 10px;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 10px;
+    }
+    .nav-button {
+      background-color: #bde4ff;
+      color: #003f66;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .nav-button:hover {
+      background-color: #a3d8ff;
+    }
+    .section {
+      background-color: #ffffff;
+      margin: 30px auto;
+      max-width: 900px;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    h2 {
+      color: #003f66;
+      border-bottom: 2px solid #cde6ff;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    p {
+      line-height: 1.6;
+      max-width: 750px;
+      margin: 0 auto 30px auto;
+    }
+    img {
+      display: block;
+      width: 100%;
+      max-width: 1900px;
+      max-height: 900px;
+      object-fit: contain;
+      border-radius: 10px;
+      margin: 0 auto;
+      padding: 10px;
+      background-color: #f0faff;
+      border: 1px solid #d0ebff;
+    }
+    figcaption {
+      font-style: italic;
+      color: #555;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Genomic Selection for Resilient Crop Breeding in South Punjab</h1>
+    <nav>
+      <button class="nav-button" onclick="location.href='index.html'">Home</button>
+      <button class="nav-button" onclick="location.href='index.html'">Methodology</button>
+      <button class="nav-button" onclick="location.href='beagle.html'">Beagle</button>
+      <button class="nav-button" onclick="location.href='gwas.html'">GWAS Results</button>
+      <button class="nav-button" onclick="location.href='xgboost.html'">XGBoost Results</button>
+      <button class="nav-button" onclick="location.href='randomforest.html'">Random Forest Results</button>
+      <button class="nav-button" onclick="location.href='evaluation.html'">Evaluation Results</button>
+    </nav>
+  </header>
+
+  <div class="section">
+    <h2>Genome-Wide Association Study (GWAS)</h2>
+    <p>
+      Genome-Wide Association Study (GWAS) is an essential method to identify genetic variants associated with important traits in populations.
+      It scans the genome to find markers linked with phenotypic variations, helping researchers understand the genetic basis of complex traits.
+    </p>
+    <p>
+      For this project, GWAS was conducted using <strong>PLINK</strong>, a popular software tool for genetic data analysis. Additionally, the
+      <strong>Genomic Best Linear Unbiased Prediction (GBLUP)</strong> approach was applied to enhance genomic predictions by incorporating
+      genetic relationships between samples.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>GWAS Results for Multiple Traits</h2>
+    <figure>
+      <img src="images/gwas1.png" alt="Combined GWAS Results for Multiple Traits" />
+      <img src="images/gwas2.png" alt="Combined GWAS Results for Multiple Traits" />
+      <img src="images/gwas3.png" alt="Combined GWAS Results for Multiple Traits" />
+      <figcaption>Combined subplot showing GWAS results for all traits including Days to Heading, Spike Length, Plant Height, NDVI, Grains per Spike, Thousand Grain Weight, and Yield.</figcaption>
+    </figure>
+  </div>
+
+</body>
+</html>
