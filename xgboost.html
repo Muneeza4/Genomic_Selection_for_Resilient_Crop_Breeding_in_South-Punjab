@@ -23,7 +23,7 @@
 
     header h1 {
       color: #003f66;
-      margin-bottom: 50px;
+      margin-bottom: 50px; /* extra space below heading */
     }
 
     nav {
@@ -31,11 +31,11 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 15px;
-      margin-top: 20px; /* extra space below heading */
+      margin-top: 20px;
     }
 
     .nav-button {
-      background-color: #e3f2fc; 
+      background-color: #e3f2fc;
       color: #003f66;
       border: none;
       padding: 10px 20px;
@@ -46,7 +46,7 @@
     }
 
     .nav-button:hover {
-      background-color: #a3d8ff; /* darker on hover */
+      background-color: #a3d8ff;
     }
 
     .section {
@@ -60,28 +60,27 @@
 
     h2 {
       color: #003f66;
-      margin-top: 30px;
-      margin-bottom: 20px;
+      margin: 30px 40px 20px 40px; /* top, right, bottom, left */
       border-bottom: none;
       padding-bottom: 0;
     }
 
     p {
       line-height: 2;
-      margin-bottom: 20px;
+      margin: 0 40px 20px 40px; /* top 0, sides 40px, bottom 20px */
       text-align: justify;
     }
 
     img {
       display: block;
-      width: 100%;
-      max-height: 450px;
+      width: 100%;   /* full width */
+      max-height: 550px;
       object-fit: contain;
       border-radius: 10px;
       margin: 30px auto 10px;
       padding: 10px;
       background-color: #ffffff;
-      border: 0px solid #d0ebff;
+      border: 1px solid #d0ebff;
     }
   </style>
 </head>
@@ -118,11 +117,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
