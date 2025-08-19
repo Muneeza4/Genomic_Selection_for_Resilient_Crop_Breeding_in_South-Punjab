@@ -23,7 +23,7 @@
 
     header h1 {
       color: #003f66;
-      margin-bottom: 40px; /* extra space below heading */
+      margin-bottom: 40px;
     }
 
     nav {
@@ -69,15 +69,22 @@
       padding-bottom: 10px;
     }
 
+    h3 {
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: bold;
+      color: #003f66;
+      margin-bottom: 15px;
+    }
+
     p {
       line-height: 2;
-      margin: 0 40px 20px 40px; /* top 0, sides 40px, bottom 20px */
+      margin: 0 40px 20px 40px;
       text-align: justify;
     }
 
     img {
       display: block;
-      width: 100%;   /* full width */
+      width: 100%;
       max-height: 550px;
       object-fit: contain;
       border-radius: 10px;
@@ -85,6 +92,39 @@
       padding: 10px;
       background-color: #ffffff;
       border: 1px solid #d0ebff;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    table th, table td {
+      border: 1px solid #d0ebff;
+      padding: 8px 12px;
+    }
+
+    table th {
+      background-color: #ebf4fa;
+      color: #003f66;
+    }
+
+    table td {
+      color: #003f66;
+    }
+
+    .table-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    .table-wrapper {
+      flex: 1;
+      min-width: 300px;
     }
   </style>
 </head>
@@ -103,85 +143,82 @@
     </nav>
   </header>
 
+  <!-- Feature Selection Bar Chart -->
+  <section class="section">
+    <h2>Feature Selection Summary</h2>
+    <img src="images/Graph_of_feature_selec.png" alt="Feature Selection Bar Chart">
+  </section>
 
-<!-- Feature Selection Bar Chart -->
-<section class="section">
-  <h2>Feature Selection Summary</h2>
-  <img src="images/Graph_of_feature_selec.png" alt="Feature Selection Bar Chart">
-</section>
+  <!-- Accuracy Comparison Tables Side by Side -->
+  <section class="section">
+    <h2>Model Accuracy Comparison (XGBoost vs Random Forest)</h2>
+    <div class="table-container">
+      <!-- XGBoost Table -->
+      <div class="table-wrapper">
+        <h3>XGBoost Accuracy</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Trait</th>
+              <th>R² Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Days to heading</td><td>0.9161</td></tr>
+            <tr><td>ph_2022-23</td><td>0.8613</td></tr>
+            <tr><td>NDVI_2022-23</td><td>0.993</td></tr>
+            <tr><td>SL_2022-23</td><td>0.8732</td></tr>
+            <tr><td>DTH_2022-23</td><td>0.9140</td></tr>
+            <tr><td>GPS_2022-23</td><td>0.7973</td></tr>
+            <tr><td>TGW_2022-23</td><td>0.8064</td></tr>
+            <tr><td>Plant height</td><td>0.8662</td></tr>
+            <tr><td>Spikes per meter square</td><td>0.7592</td></tr>
+            <tr><td>FLA Average</td><td>0.738</td></tr>
+            <tr><td>NDVI</td><td>0.8076</td></tr>
+            <tr><td>Spike Length</td><td>0.8303</td></tr>
+            <tr><td>Grain per Spike</td><td>0.7896</td></tr>
+            <tr><td>TGW</td><td>0.7641</td></tr>
+            <tr><td>Yield per meter square</td><td>0.6962</td></tr>
+          </tbody>
+        </table>
+      </div>
 
-<!-- Accuracy Comparison Tables Side by Side -->
-<section class="section">
-  <h2>Model Accuracy Comparison (XGBoost vs Random Forest)</h2>
-  <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: space-around;">
-    <!-- XGBoost Table -->
-    <div style="flex: 1; min-width: 300px;">
-      <h3 style="color: #003f66;">XGBoost Accuracy</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Trait</th>
-            <th>R² Score</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Days to heading</td><td>0.9161</td></tr>
-          <tr><td>ph_2022-23</td><td>0.8613</td></tr>
-          <tr><td>NDVI_2022-23</td><td>0.993</td></tr>
-          <tr><td>SL_2022-23</td><td>0.8732</td></tr>
-          <tr><td>DTH_2022-23</td><td>0.9140</td></tr>
-          <tr><td>GPS_2022-23</td><td>0.7973</td></tr>
-          <tr><td>TGW_2022-23</td><td>0.8064</td></tr>
-          <tr><td>Plant height</td><td>0.8662</td></tr>
-          <tr><td>Spikes per meter square</td><td>0.7592</td></tr>
-          <tr><td>FLA Average</td><td>0.738</td></tr>
-          <tr><td>NDVI</td><td>0.8076</td></tr>
-          <tr><td>Spike Length</td><td>0.8303</td></tr>
-          <tr><td>Grain per Spike</td><td>0.78969/td></tr>
-          <tr><td>TGW</td><td>0.7641</td></tr>
-          <tr><td>Yield per meter square</td><td>0.6962</td></tr>
-
-          
-        </tbody>
-      </table>
+      <!-- Random Forest Table -->
+      <div class="table-wrapper">
+        <h3>Random Forest Accuracy</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Trait</th>
+              <th>R² Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Days to heading</td><td>0.8826</td></tr>
+            <tr><td>ph_2022-23</td><td>0.7774</td></tr>
+            <tr><td>NDVI_2022-23</td><td>0.9556</td></tr>
+            <tr><td>SL_2022-23</td><td>0.7744</td></tr>
+            <tr><td>DTH_2022-23</td><td>0.8234</td></tr>
+            <tr><td>GPS_2022-23</td><td>0.7148</td></tr>
+            <tr><td>TGW_2022-23</td><td>0.7753</td></tr>
+            <tr><td>Plant height</td><td>0.8004</td></tr>
+            <tr><td>Spikes per meter square</td><td>0.6399</td></tr>
+            <tr><td>FLA Average</td><td>0.7179</td></tr>
+            <tr><td>NDVI</td><td>0.7001</td></tr>
+            <tr><td>Spike Length</td><td>0.7543</td></tr>
+            <tr><td>Grain per Spike</td><td>0.7138</td></tr>
+            <tr><td>TGW</td><td>0.7167</td></tr>
+            <tr><td>Yield per meter square</td><td>0.6627</td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
+  </section>
 
-    <!-- Random Forest Table -->
-    <div style="flex: 1; min-width: 300px;">
-      <h3 style="color: #003f66;">Random Forest Accuracy</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Trait</th>
-            <th>R² Score</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Days to heading</td><td>0.8826</td></tr>
-          <tr><td>ph_2022-23</td><td>0.7774</td></tr>
-          <tr><td>NDVI_2022-23</td><td>0.95558</td></tr>
-          <tr><td>SL_2022-23</td><td>0.7744</td></tr>
-          <tr><td>DTH_2022-23</td><td>0.8234</td></tr>
-          <tr><td>GPS_2022-23</td><td>0.7148</td></tr>
-          <tr><td>TGW_2022-23</td><td>0.7753</td></tr>
-          <tr><td>Plant height</td><td>0.8004</td></tr>
-          <tr><td>Spikes per meter square</td><td>0.6399</td></tr>
-          <tr><td>FLA Average</td><td>0.7179</td></tr>
-          <tr><td>NDVI</td><td>0.7001</td></tr>
-          <tr><td>Spike Length</td><td>0.7543</td></tr>
-          <tr><td>Grain per Spike</td><td>0.7138</td></tr>
-          <tr><td>TGW</td><td>0.7167</td></tr>
-          <tr><td>Yield per meter square</td><td>0.6627</td></tr>
-      </table>
-    </div>
-  </div>
-</section>
-
-<!-- Accuracy Comparison Image -->
-<section class="section">
-  <h2>Visual Comparison of Model Accuracy</h2>
-  <img src="images/results_graph.png" alt="Accuracy Comparison Chart">
-</section>
-
-
-
+  <!-- Accuracy Comparison Image -->
+  <section class="section">
+    <h2>Visual Comparison of Model Accuracy</h2>
+    <img src="images/results_graph.png" alt="Accuracy Comparison Chart">
+  </section>
+</body>
+</html>
