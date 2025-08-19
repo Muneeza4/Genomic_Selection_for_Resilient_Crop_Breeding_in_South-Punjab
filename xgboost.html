@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Genomic Research Dashboard - XGBoost Results</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     body {
       font-family: 'Times New Roman', Times, serif;
@@ -14,16 +15,15 @@
     }
 
     header {
-      background-color: #bde4ff; /* navbar same as buttons */
-      padding: 30px 40px;
+      background-color: #e0f0ff;
+      padding: 20px 40px;
       text-align: center;
-      border-bottom: 2px solid #a3d8ff;
+      border-bottom: 2px solid #bcdfff;
     }
 
     header h1 {
-      font-size: 36px;
-      margin-bottom: 20px;
       color: #003f66;
+      margin-bottom: 10px;
     }
 
     nav {
@@ -35,56 +35,53 @@
     }
 
     .nav-button {
-      background-color: ##c9e9ff;
-      color: #003f66;
-      border: 2px solid #003f66; /* dark blue border */
-      box-shadow: 2px 2px 5px rgba(0,0,0,0.2); /* subtle shadow */
+      background-color: #ffffff; /* white background */
+      color: #003f66;           /* dark blue text */
+      border: 2px solid #003f66;
       padding: 10px 20px;
       border-radius: 8px;
       font-weight: 600;
       cursor: pointer;
-      transition: background-color 0.3s, transform 0.2s;
+      transition: background-color 0.3s;
     }
 
     .nav-button:hover {
-      background-color: #a3d8ff;
-      transform: translateY(-2px); /* slight hover lift */
+      background-color: #bde4ff;
     }
 
     .section {
       background-color: #ffffff;
-      margin: 60px auto;
-      max-width: 1300px; /* increased width */
-      padding: 50px;
+      margin: 30px auto;
+      max-width: 1300px;
+      padding: 30px;
       border-radius: 12px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
 
     h2 {
-      font-weight: normal;
-      font-size: 28px;
       color: #003f66;
-      margin-top: 50px;
-      margin-bottom: 30px;
-      border-bottom: 4px solid grey; /* thicker grey line */
-      padding-bottom: 10px;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      border-bottom: none; /* no line */
+      padding-bottom: 0;
     }
 
     p {
       line-height: 2;
-      margin-bottom: 30px; /* more space between paragraphs */
+      margin-bottom: 20px;
+      text-align: justify; /* justified text */
     }
 
     img {
       display: block;
-      width: 100%;
-      height: auto;
+      width: 90%;
+      max-height: 450px;
       object-fit: contain;
       border-radius: 10px;
-      margin: 30px auto 20px;
-      background-color: #ffffff; /* white background */
-      border: none; /* removes previous line */
-      padding: 0;
+      margin: 30px auto 10px;
+      padding: 10px;
+      background-color: #f0faff;
+      border: 1px solid #d0ebff;
     }
   </style>
 </head>
@@ -121,4 +118,3 @@
 
 </body>
 </html>
-
